@@ -1,0 +1,26 @@
+* create colaborative dir as /practice/demo, create file in demo as Text.txt
+
+* write 10 lines of data in Text.txt file using vim editor
+
+* copy first 4 lines and paste at the end of file
+
+* give numbering to each line and delete 12th and 13th line
+
+* copy anaconda file into /mnt dir without using cp command
+
+* open /mnt/anaconda file in vim editor 
+
+* Bring cursor at the bottom of file using shortcut
+
+* copy 4 X 6 block of characters starting from 3rd character of 251th line
+ 
+* find linenumber where "network" word appears
+
+* remove highlight and save file 
+
+* read Text.txt file using all five read commands...(cat,vim,head,tail,nano)
+
+* read bottom 2 lines only 
+
+
+(not: use shortcuts as much as possible to complete above task )

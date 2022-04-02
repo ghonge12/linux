@@ -1,0 +1,32 @@
+   
+* add user shubham and chetan and assign password to them.-----> useradd shubham,chetan
+
+* add user atul having id = 3002-------> useradd -u 3002 atul
+
+* change user id of shubham to 3003---> userrmod -u 3003 shubham
+
+* add group sk with id 1001----> groupadd -g 1001 sk
+
+* assign chetan and shubham to sk group-----> gpasswd -M shubham,chetan sk
+
+* make atul admin to sk group-----> gpasswd -A atul sk
+
+* all users should not allowed to change password for 3 days.-------> chage -m 3 atul,shubham,chetan
+
+* password should expires after 30 days, inactive after 10 days of expiration, warning days should be 7 before expiry, and account should be expire after 2 month from the day of it created. (perform this for shubham user)
+
+---> {chage -M 30 shubham}--->{chage -I 10 shubham}--->{chage -W 7 shubham}---->{chage -E "1 march 2022" shubham}
+
+* change group id of chetan to 2000----> gpasswd -g 2000 chetan
+
+* give sk as primary group to atul----> usermod -g sk atul
+
+* give comment to chetan that "it is local user"---->usermod -c "it is local user" chetan
+
+* create user mayur and force him to change his password----> {useradd mayur}-----> {switch user & passwd for current mayur user passwd}
+
+* since atul is admin of sk group, use atul's account to add mayur user in sk group.----> {switch user to atul} & gpasswd -a mayur sk
+
+* change login name of mayur to myacnt -----> usermod -c "myacnt" mayur {do it from root user & after that put init 6, after that check d screen thier local login user name rename to myacnt}
+
+* myacnt user should not be permitted for login to interactive shell ?????????????????

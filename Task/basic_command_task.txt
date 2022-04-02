@@ -1,0 +1,24 @@
+(note: before begin practice, first reset your system)
+
+*display kernel name----> uname -a
+
+*display current date and time---> date
+
+*what is your machine name?----> hostname/hostname -s
+
+*get information about peripheral components attached to your system-----> hostnamectl
+
+*display version and release of kernel--->uname -vr
+
+*dispaly current, next and prev month's calender----> cal -3
+
+*what will be julien date and week day of 13 may 2020----> cal -j 3
+
+*open new terminal and show terminal type and logged in details of user------>who/whoami/who am i
+
+*what is /etc, /root, /home and /var directory used for?---> theory of 19 directories of hierarchy of linux file management system
+
+*shutdown computer after 10 min----> shutdown -h 10
+
+*cancel shutdown-------> shutdown -c 
+
