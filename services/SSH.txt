@@ -1,0 +1,33 @@
+1. Port no-22
+2. Configuration file- /etc/ssh/sshd_config
+
+
+STEP 1:- login through with password
+
+[root@server~] ssh root@172.50.0.1 >> yes >> password generate
+			
+	<<ssh root@192.50.0.10 / ssh root@192.50.0.20>> ----> now we can securely login into the server<--->client
+
+
+
+
+STEP 2:- login through privatekey, without password
+
+[root@server~] ssh-keygen - - - - Press till key generation in encrypted formate....
+[root@server~] ls .ssh
+[root@server .ssh] id_rsa id_rsa.pub known_host...(known_host shows login history)
+
+
+[root@server~] ssh-copy-id root@<IP of ssh user>  ------->  ssh-copy-id root@172.50.0.20 
+                                                        
+[root@client~] ls .ssh                                   .....................................after this copy command client side key will send it & renamed and authorized it AUTOMATICALLY.
+[root@client~] authorized_keys know_host 
+	|
+	|	   PasswordAuthentication yes = don't asked password while privatekey time login
+	|        PasswordAuthentication  no  = asked password while privatekey time login
+	v
+[root@client~]
+																
+
+													
+Now, we can succsesfully login to client's system...............

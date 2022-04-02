@@ -1,0 +1,66 @@
+ftp server port 20,21
+
+server side
+
+installed
+yum install vsftp -y
+yum install ftp -y
+configruation 
+/etc/vsftp/vsftp.conf
+:se nu
+line 12
+linue 16
+
+cd /var/ftp
+mkdir mahi
+cd mahi
+touch file{1..10}
+chmod 777 /var/ftp/mahi
+systemctl start vsftp
+systemctl enable vsftp
+systemctl status vsftp
+ firewall-cmd --add-service=ftp --permanent
+firewall-cmd --add-port=21/tcp --permanent
+firewall-cmd --reload
+
+ftp localhost
+
+ftp
+
+exit
+ getsebool -a | grep ftp
+ setsebool ftpd_anon_write on
+ setsebool ftpd_full_access 0n
+ setsebool ftpd-home-dir on
+ 
+ useradd common
+ passwd common :- 1234
+ cat /etc/passwd | grep common
+ cd /home/common
+ ls
+ touch file{1..10}
+ vim /etc/vsftp/vsftp
+ uncomment 
+ chroot_local_user on
+ systemctl restart vsftp
+ systemctl enable vsftp
+ 
+ chmod 550 common
+
+---------------------------------------------------------------------------------------
+client side
+
+ping 192.168.0.100
+yum install ftp -yum
+ftp 192.168.0.100 
+firewall-cmd --add-service=ftp --permanent
+firewall-cmd --add-port=21/tcp --permanent
+firewall-cmd --reload
+
+ftp 192.168.0.100
+ls
+help
+cd dir_name
+
+
+  

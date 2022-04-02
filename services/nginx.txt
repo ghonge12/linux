@@ -1,0 +1,80 @@
+nginx server for centos7
+How to Install Nginx on CentOS 7
+Generally, CentOS is the preferred distribution package in the hosting industry. Currently, CentOS 8 is the latest version, while CentOS 7 is supported until the year 2024.
+The configuration procedure below details the steps necessary to set up Nginx on CentOS 7.
+For installation instructions for CentOS 8, please read How to Install Nginx on CentOS 8.
+
+
+Step 1: Update Repository Package Lists
+        yum update -y
+
+Step 2:  Install Extra Packages for Enterprise Linux (EPEL)
+        Nginx is not available in the standard repositories that come with the CentOS package,
+		so you will need to install the EPEL repository on your server. EPEL is free to use and provides numerous open-source packages to install with Yum.
+
+
+       To install EPEL, run the following command using the Yum package manager:
+        
+		sudo yum install -y epel-release -y
+		
+		
+Step 3: Install Nginx
+        Step number two has added the Nginx repository to your server. 
+        Now, you can install Nginx by running the following yum command:
+
+        sudo yum –y install nginx	
+
+
+Step 4: Start Nginx Service
+        Your instance of Nginx is installed, but it won’t start automatically.
+   
+        To start Nginx, run:
+
+        sudo systemctl start nginx
+        After you hit enter, you will not get a return value.
+		However, Nginx should have started. To check its status, run:
+
+        sudo systemctl status nginx
+
+
+Step 5: Configure Nginx to Start on Boot
+        Most admins will want to make sure that NGINX starts up automatically whenver the server restarts. 
+		  To set this up, run:
+
+         sudo systemctl enable nginx		
+		 
+		 
+Step 6: Configure Firewall to Allow Traffic
+        CentOS 7 enables firewalls by default and blocks access to ports 80 and 443. 
+		It will block any inbound HTTPS and HTTP packets from Nginx.
+
+    To allow HTTP and HTTPS traffic, run the following commands:
+
+      firewall-cmd --zone=public --permanent --add-service=http
+      firewall-cmd --zone=public --permanent --add-service=https
+     firewall-cmd --reload		 
+	 
+Step 7: Verify Nginx Install
+       The easiest way to check whether Nginx is running properly is by visiting your server’s public IP address.
+	   Just open your web browser and visit http://server_IP_or_domain_name/
+       First, find your server’s public IP address.
+
+      ip address
+
+..................................................................................................................................................................................
+
+
+Steps & details....
+
+Nginx is a open-source, fast, lightweight and high-performance web server that can be used to serve static files or host our index.html files.
+
+Port no - 80 - 8082 (for port forwarding)
+configuration file - /etc/nginx
+nginx html page - /usr/share/nginx/html
+
+# yum install epel-release -y
+# yum install nginx -y
+# curl localhost
+# rm /usr/share/nginx/html/index.html
+# [root@server html] vim index.html...........(create a new file in default html page location /usr/share/nginx/html/index.html and insert data)
+# curl localhost...............your html page will deployed successfully.

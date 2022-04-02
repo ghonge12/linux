@@ -1,0 +1,12 @@
+hide /disable user list on login screen in linux
+cd /etc/dconf/db/gdm.d/
+vim 00-login-screen
+new line 
+[org/gname/login-screen]
+disable-user-list=true
+:wq
+
+update gdm  file
+
+dconf update
+check 
