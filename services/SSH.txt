@@ -31,3 +31,17 @@ STEP 2:- login through privatekey, without password
 
 													
 Now, we can succsesfully login to client's system...............
+
+
+################################################################################################################################
+
+
+########### While using secure copy command... #################
+
+Same region scp:- Receiver .pem key + private ip of receiver
+Diffrent region:- Receiver .pem key + Public-IP
+
+While creating instacnce we create a key-pair then..we receiver private key name called "root.pem" & public key was copy sent and stored into /root/.ssh/authorized_keys this is a public key was handled and stored by AWS Backend management.
+
+	1. root.pem -->Private key
+	2. authorized_keys --> Public Key
