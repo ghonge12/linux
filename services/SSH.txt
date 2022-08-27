@@ -45,3 +45,12 @@ While creating instacnce we create a key-pair then..we receiver private key name
 
 	1. root.pem -->Private key
 	2. authorized_keys --> Public Key
+	
+############# While getting clone from remote repository #################
+
+ 1. Firstly, we have to delete unwanted keys from remote repository SSH & GPG Keys section.
+ 2. Do ssh-keygen in your terminal.
+ 3. copy and paste the id_rsa.pub (public key) in remote repository section and save it.
+ 4. Now, take clone of that remote repository via "ssh". 
+ 
+ 	# git clone <ssh.link from remote repo>
