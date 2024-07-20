@@ -38,6 +38,8 @@ Now, we can succsesfully login to client's system...............
 
 ########### While using secure copy command... #################
 
+https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/
+
 Same region scp:- Receiver .pem key + private ip of receiver
 Diffrent region:- Receiver .pem key + Public-IP
 
